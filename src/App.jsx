@@ -12,11 +12,11 @@ import {
   Users,
 } from "lucide-react";
 
-// Componente principal de la app
+//Componente principal
 const App = () => {
-  // Estado para la lista de usuarios
+  //lista usuarios
   const [listaUsuarios, setListaUsuarios] = useState([]);
-  // Estado para los datos del formulario
+  //datos del formulario
   const [datosFormulario, setDatosFormulario] = useState({
     nombre: "",
     correo: "",
@@ -24,15 +24,15 @@ const App = () => {
     direccion: "",
     edad: "",
   });
-  // Estado para los mensajes de error
+  // mensajes
   const [mensajesError, setMensajesError] = useState({});
-  // Estado para saber si se está editando un usuario
+  // estado para saber que usuario
   const [usuarioEditando, setUsuarioEditando] = useState(null);
-  // Estado para los datos que se están editando
+  // estado para datos edutandi
   const [datosEditados, setDatosEditados] = useState({});
-  // Estado para mostrar spinner de envío
+  // cargando...
   const [cargando, setCargando] = useState(false);
-  // Estado para mostrar notificaciones
+  // notificaciones
   const [alerta, setAlerta] = useState({
     visible: false,
     mensaje: "",
@@ -45,7 +45,7 @@ const App = () => {
     setListaUsuarios(guardados);
   }, []);
 
-  // Guardar localStorage
+  // guardar localStorage
   function actualizarUsuarios(nuevaLista) {
     localStorage.setItem("usuarios", JSON.stringify(nuevaLista));
     setListaUsuarios(nuevaLista);
